@@ -1,0 +1,59 @@
+:root {
+
+  --prism-foreground: #f8f8f2;
+  --prism-comment: #6272a4;
+  --prism-string: #f1fa8c;
+  --prism-keyword: #ff79c6;
+  --prism-function: #50fa7b;
+  --prism-number: #bd93f9;
+  --prism-punctuation: #f8f8f2;
+  --prism-operator: #ff79c6;
+  --prism-class-name: #8be9fd;
+  --prism-tag: #ff79c6;
+  --prism-attr-name: #50fa7b;
+  --prism-attr-value: #f1fa8c;
+}
+
+.token.comment {
+  color: var(--prism-comment);
+}
+
+.token.string {
+  color: var(--prism-string);
+}
+
+.token.keyword {
+  color: var(--prism-keyword);
+}
+
+.token.function {
+  color: var(--prism-function);
+}
+
+.token.number {
+  color: var(--prism-number);
+}
+
+.token.punctuation {
+  color: var(--prism-punctuation);
+}
+
+.token.operator {
+  color: var(--prism-operator);
+}
+
+.token.class-name {
+  color: var(--prism-class-name);
+}
+
+.token.tag {
+  color: var(--prism-tag);
+}
+
+.token.attr-name {
+  color: var(--prism-attr-name);
+}
+
+.token.attr-value {
+  color: var(--prism-attr-value);
+}

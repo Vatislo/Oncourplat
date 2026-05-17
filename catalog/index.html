@@ -4,89 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <header >
+    <header>
         <nav class="container">
-            <a href="../Home">&#8592 Home</a>
-            <a href="../Home">Account &#8594</a>
+        <a href="../index.html" class="logo">Oncorplat</a>
+        <ul class="nav-links">
+            <li><a href="../about/index.html">About</a></li>
+            <li><a href="../catalog/index.html">Courses</a></li>
+            <li><a href="../account/index.html">Dashboard</a></li>
+        </ul>
         </nav>
     </header>
-    <section class="container">
-        <form>
-            <input type="text">
-            <div>
-                <button>button 1</button>
-                <button>button 2</button>
-                <button>button 3</button>
-                <button>button 4</button>
-            </div>
-        </form>
-        <div class="recommended-courses">
-            <h2>Recommended courses</h2>
-            <div class="cards">
-                <div class="card">
-                    <h3>Courses</h2>
-                    <a href="">Author</a>
-                    <p></p>
-                </div>
-                <div class="card">
-                    <h3>Courses</h2>
-                    <a href="">Author</a>
-                    <p></p>
-                </div>
-                <div class="card">
-                    <h3>Courses</h2>
-                    <a href="">Author</a>
-                    <p></p>
-            
-                <div class="card">
-                    <h3>Courses</h2>
-                    <a href="">Author</a>
-                    <p>5.0</p>
-                </div>
-                <div class="card">
-                    <h3>Courses</h2>
-                    <a href="">Author</a>
-                    <p>5.0</p>
-                </div>
-                <div class="card">
-                    <h3>Courses</h2>
-                    <a href="">Author</a>
-                    <p>5.0</p>
-                </div>
-                <div class="card">
-                    <h3>Courses</h2>
-                    <a href="">Author</a>
-                    <p>5.0</p>
-                </div>
-                <div class="card">
-                    <h3>Courses</h2>
-                    <a href="">Author</a>
-                    <p>5.0</p>
-                </div>
-                <div class="card">
-                    <h3>Courses</h2>
-                    <a href="">Author</a>
-                    <p>5.0</p>
-                </div>
-                <div class="card">
-                    <h3>Courses</h2>
-                    <a href="">Author</a>
-                    <p>5.0</p>
-                </div>
-                <div class="card">
-                    <h3>Courses</h2>
-                    <a href="">Author</a>
-                    <p>5.0</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <main>
 
-    <script src="../main.js"></script>
+        <section class="catalog-text-box">
+            <div class="container catalog-text">
+                <h1>
+                    Courses Catalog
+                </h1>
+                <p>
+                    Choose your path and start learning
+                </p>
+                <form class="catalog-form">
+                    <select name="" id="selProLang">
+                        <option value="" hidden="" selected="">Programm languge</option>
+                        <option value="">Any</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="Python">Python</option>
+                        <option value="Java">Java</option>
+                        <option value="Rust">Rust</option>
+                        <option value="PHP">PHP</option>
+                    </select>
+                    <select name="" id="selLevel">
+                        <option value="" hidden="" selected="">Start level</option>
+                        <option value="">Any</option>
+                        <option value="junior">Junior</option>
+                        <option value="middle">Middle</option>
+                        <option value="senior">Senior</option>
+                    </select>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </section>
+        <section class="catalog-card-box">
+            <div class="container cards catalog-card ">
+                
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>Educational project by <a href="https://github.com/Vatislo" target="_blank">vatislo</a></p>
+        </div>
+    </footer>
     <script src="./script.js"></script>
+    <script src="https://kit.fontawesome.com/aa803d7ef1.js" crossorigin="anonymous"></script>
+    <script src="../main.js"></script>
 </body>
 </html>

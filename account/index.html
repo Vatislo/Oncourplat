@@ -4,13 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    
+    <header>
+        <nav class="container">
+        <a href="../index.html" class="logo">Oncorplat</a>
+        <ul class="nav-links">
+            <li><a href="../about/index.html">About</a></li>
+            <li><a href="../catalog/index.html">Courses</a></li>
+            <li><a href="../account/index.html">Dashboard</a></li>
+        </ul>
+        </nav>
+    </header>
+    <main>
 
-    <script src="../main.js"></script>
+        <section class="preview-box">
+            <div class="container preview">
+                <h2>Account statistics</h2>
+                <div id="preview-items" class="preview-items">    
+                </div>
+            </div>
+        </section>
+        <section class="progress-box">
+            <div class="container progress">
+                <h2>In progress</h2>
+                <div id="progress-items" class="progress-items">
+                </div>
+            </div>
+        </section>
+        <section class="control-center-box">
+            <div class="container control-center">
+                <h2>Control center</h2>
+                <div id="control-center-items">
+                    <button id="import-data">Import DATA</button>
+                    <button id="export-data">Export DATA</button>
+                    <button id="delete-data">Delete DATA</button>
+                </div>
+            </div>
+        </section>
+        <div id="modal-overlay" class="modal-overlay">
+            <div class="modal">
+                <button id="modal-close" class="modal-close">&times;</button>
+                <h2 id="modal-title"></h2>
+                <div id="modal-content" class="modal-content"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Educational project by <a href="https://github.com/Vatislo" target="_blank">vatislo</a></p>
+        </div>
+    </footer>
     <script src="./script.js"></script>
+    <script src="https://kit.fontawesome.com/aa803d7ef1.js" crossorigin="anonymous"></script>
+    <script src="../main.js"></script>
 </body>
 </html>

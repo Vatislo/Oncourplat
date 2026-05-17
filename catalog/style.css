@@ -1,33 +1,83 @@
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 0;
-    font-size: 30px;
+main {
+    background: radial-gradient(ellipse at 50% 50%, rgba(138, 92, 246, 0.3) 20%, transparent 60%);
 }
 
-form {
+.catalog-text-box {
+    padding: 100px 0;
+}
+
+.catalog-text {
+    padding: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
-    height: 200px;
-    input, button {
-        background-color: white;
-        border: 2px solid black;
-        border-radius: 5px;
-        padding: 10px;
-        font-size: 20px;
+    gap: 20px;
+    max-width: 800px;
+    background-color: var(--bg-card);
+    border-radius: 1rem;
+    /* border: var(--accent) 2px solid; */
+    border: var(--border) 2px  solid;
+    /* box-shadow: 0 0px 100px var(--accent); */
+    transition-duration: 0.3s;
+
+    h1 {
+        font-size: 3rem;
     }
-    div {
-        display: flex;
-        justify-content: center;
-        gap: 50px;
+    p {
+        color: var(--text-secondary);
+    }
+    select, button {
+        padding: 12px;
+        border-radius: 0.5rem;
+        width: 220px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        border: var(--border) 1px solid;
+        background: var(--bg-secondary);
+        color: white;
+        text-align: left;
+        transition-duration: 0.2s;
+        &:hover {
+            border-color: var(--accent);
+            /* transform: scale(1.05); */
+        }
+    }
+    button:active {
+        transform: scale(0.95);
     }
 }
 
-.recommended-courses {
+.catalog-form {
     display: flex;
-    flex-direction: column;
+    gap: 20px;
+}
+
+.cards {
+    display: flex;
     justify-content: center;
-    
+    flex-wrap: wrap;
+    gap: 20px;
+    .card {
+        height: 180px;
+        width: 360px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: var(--bg-card);
+        border-radius: 1rem;
+        border: var(--border) 2px solid;
+        transition-duration: 0.3s;
+        cursor: pointer;
+        &:hover {
+            border-color: var(--accent);
+            transform: scale(1.02);
+            /* box-shadow: 0 2px 20px var(--accent); */
+        }
+        div {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
 }

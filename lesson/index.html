@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lesson</title>
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="./style.css">
+
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"> -->
+         <link rel="stylesheet" href="../css/prism.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="container">
+        <a href="../index.html" class="logo">Oncorplat</a>
+        <ul class="nav-links">
+            <li><a href="../about/index.html">About</a></li>
+            <li><a href="../catalog/index.html">Courses</a></li>
+            <li><a href="../account/index.html">Dashboard</a></li>
+        </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="course-box">
+            <div class="container course">
+                <div class="left-menu">
+                    <div id="info" class="info">
+                    </div>
+                    <ul id="lesson-list" class="lesson-list">
+                    </ul>
+                </div>
+                <div id="work" class="work">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>Educational project by <a href="https://github.com/Vatislo" target="_blank">vatislo</a></p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('code').forEach((codeElement) => {
+                codeElement.classList.add('language-javascript');
+            });
+            Prism.highlightAllUnder(document.body);
+        });
+    </script>
+    <script src="./script.js"></script>
+    <script src="../main.js"></script>
+</body>
+</html>
