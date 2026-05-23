@@ -18,6 +18,11 @@ A catalog of free IT courses. Browse, search, and track your learning progress.
 - **Syntax highlighting** — [Prism.js](https://prismjs.com/)
 - **Data** — fetched from [FakeApi](https://github.com/vatislo/FakeApi/)
 
+
+## Link
+
+[Openourplat](https://vatislo.github.io/Openourplat/)
+
 ## Contact
 
 [![Email](https://img.shields.io/badge/-Vatislo-090909?style=for-the-badge&logo=tuta&logoColor=FF0000)](mailto:Vatislo@tutanota.com)
