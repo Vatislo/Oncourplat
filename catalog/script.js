@@ -1,17 +1,7 @@
-const getData = async (url) => {
-  try {
-    const response = await fetch(url)
-    if (!response.ok) {
-      throw new Error(`data undefined`)
-    }
-    return await response.json()
-  } catch (error) {
-    console.error(error)
-  }
-}
+const API_BASE = "https://vatislo.github.io/FakeApi/oncourplat"
 
 const init = async () => {
-  const allInfo = await getData("https://vatislo.github.io/FakeApi/oncourplat/all_info.json")
+  const allInfo = await getData(`${API_BASE}/all_info.json`)
   if (!allInfo) return
 
   const cards = document.querySelector('.cards')

@@ -1,3 +1,14 @@
+// ---- helpers ----
+async function getData(url) {
+  try {
+    const response = await fetch(url)
+    if (!response.ok) throw new Error(`data undefined`)
+    return await response.json()
+  } catch (error) {
+    console.error(error)
+  }
+}
+
 // ---- user init ----
 if (localStorage.getItem('userInfo') === null) {
   const defaultUser = {
@@ -18,12 +29,14 @@ if (burger && sidebar && overlay) {
     burger.classList.remove('active')
     sidebar.classList.remove('active')
     overlay.classList.remove('active')
+    burger.style.display = ''
     document.body.style.overflow = ''
   }
   const open = () => {
     burger.classList.add('active')
     sidebar.classList.add('active')
     overlay.classList.add('active')
+    burger.style.display = 'none'
     document.body.style.overflow = 'hidden'
   }
 

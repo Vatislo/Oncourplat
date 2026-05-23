@@ -50,15 +50,20 @@ const openModal = (title, courses, type) => {
         })
     }
     modalOverlay.classList.add('active')
+    document.body.style.overflow = 'hidden'
 }
 
 const closeModal = () => {
     modalOverlay.classList.remove('active')
+    document.body.style.overflow = ''
 }
 
 modalClose.addEventListener('click', closeModal)
 modalOverlay.addEventListener('click', (e) => {
     if (e.target === modalOverlay) closeModal()
+})
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalOverlay.classList.contains('active')) closeModal()
 })
 
 const renderPage = () => {
@@ -156,10 +161,13 @@ importData.addEventListener('click', function() {
       reader.onload = function(e) {
         try {
           const data = JSON.parse(e.target.result);
+          if (!data || typeof data !== 'object' || !('savedCourses' in data)) {
+            throw new Error('Invalid format');
+          }
           localStorage.setItem('userInfo', JSON.stringify(data));
           renderPage();
         } catch (error) {
-          console.error('Invalid JSON');
+          alert('Invalid JSON file');
         }
       };
       

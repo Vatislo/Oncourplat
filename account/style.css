@@ -3,7 +3,8 @@ main {
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
-    gap: 40px;
+    gap: 30px;
+    padding-bottom: 60px;
     background: radial-gradient(ellipse at 80% 50%, rgba(138, 92, 246, 0.3) 10%, transparent 60%);
 }
 
@@ -98,7 +99,7 @@ main {
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     h2 {
         font-size: 2rem;
         text-align: center;

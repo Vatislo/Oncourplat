@@ -4,7 +4,7 @@ main {
     justify-content: start;
     min-height: 100vh;
     gap: 40px;
-    padding: 100px 0 900px;
+    padding: 100px 0 60px;
 }
 
 .course {
@@ -27,6 +27,7 @@ main {
 }
 
 .lesson-list li { 
+    white-space: nowrap;
     transition-duration: 0.2s;
     &:hover {
         color: var(--accent-hover);
@@ -136,13 +137,11 @@ pre code {
 }
 
 @media (max-width: 1300px) {
-    body {
-        padding: 0 20px;
-    }
     .course {
         align-items: center;
         flex-direction: column;
         height: 100%;
+        max-width: 98%;
     }
     .left-menu {
         position: static;
@@ -157,7 +156,6 @@ pre code {
         display: flex;
         flex-direction: column;
         gap: 5px;
-        white-space: nowrap;
     }
     .lesson-list {
         width: 55%;
@@ -166,7 +164,6 @@ pre code {
         column-gap: 20px;
         flex-wrap: wrap;
         gap: 5px;
-        white-space: nowrap;
     }
     .work {
         position: static;

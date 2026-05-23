@@ -8,17 +8,8 @@ const info = document.getElementById('info')
 const lessonList = document.getElementById('lesson-list')
 const work = document.getElementById('work')
 
-const getData = async (url) => {
-    try {
-    const response = await fetch(url)
-    if (!response.ok) {
-        throw new Error(`data undefined`)
-    }
-    return await response.json()
-} catch (error) {
-    console.error(error)
-}
-}
+const API_BASE = "https://vatislo.github.io/FakeApi/oncourplat"
+
 const toSnakeLower = (str) => {
     return str
     .trim()
@@ -89,6 +80,10 @@ const completeButton = () => {
         if (!user.inProgressCourses) user.inProgressCourses = { courses: [] }
         if (!user.completedCourses) user.completedCourses = { courses: [] }
 
+        user.completedCourses.courses = user.completedCourses.courses.filter(
+            c => c !== courseName
+        )
+
         const courseIndex = user.inProgressCourses.courses.findIndex(
             c => c.name === courseName
         )
@@ -105,9 +100,7 @@ const completeButton = () => {
             user.inProgressCourses.courses = user.inProgressCourses.courses.filter(
                 c => c.name !== courseName
             )
-            if (!user.completedCourses.courses.includes(courseName)) {
-                user.completedCourses.courses.push(courseName)
-            }
+            user.completedCourses.courses.push(courseName)
         }
         localStorage.setItem('userInfo', JSON.stringify(user))
     })
@@ -176,8 +169,8 @@ const saveBtnFun = () => {
 }
 
 const init = async () => {
-    const lessons = await getData(`https://vatislo.github.io/FakeApi/oncourplat/courses/${toSnakeLower(courseName)}/main.json`)
-    const allInfo = await getData(`https://vatislo.github.io/FakeApi/oncourplat/courses/${toSnakeLower(courseName)}/info.json`)
+    const lessons = await getData(`${API_BASE}/courses/${toSnakeLower(courseName)}/main.json`)
+    const allInfo = await getData(`${API_BASE}/courses/${toSnakeLower(courseName)}/info.json`)
     totalLessons = lessons.lessons.length
     renderInfo(allInfo,info)
     renderWork(lessons,work,lessonNumber)
