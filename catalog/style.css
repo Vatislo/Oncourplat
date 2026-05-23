@@ -1,5 +1,5 @@
 main {
-    background: radial-gradient(ellipse at 50% 50%, rgba(138, 92, 246, 0.3) 20%, transparent 60%);
+    background: radial-gradient(ellipse at 50% 50%, var(--accent-glow) 20%, transparent 60%);
 }
 
 .catalog-text-box {
@@ -11,10 +11,10 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: var(--gap-md);
     max-width: 800px;
     background-color: var(--bg-card);
-    border-radius: 1rem;
+    border-radius: var(--radius-lg);
     /* border: var(--accent) 2px solid; */
     border: var(--border) 2px  solid;
     /* box-shadow: 0 0px 100px var(--accent); */
@@ -27,7 +27,7 @@ main {
         color: var(--text-secondary);
     }
     select, button {
-        padding: 12px;
+        padding: var(--pad-sm);
         border-radius: 0.5rem;
         width: 220px;
         font-size: 1rem;
@@ -35,9 +35,9 @@ main {
         cursor: pointer;
         border: var(--border) 1px solid;
         background: var(--bg-secondary);
-        color: white;
+        color: var(--text-primary);
         text-align: left;
-        transition-duration: 0.2s;
+        transition-duration: var(--transition-fast);
         &:hover {
             border-color: var(--accent);
             /* transform: scale(1.05); */
@@ -51,14 +51,14 @@ main {
 .catalog-form {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: var(--gap-md);
 }
 
 .cards {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: var(--gap-md);
     .card {
         height: 180px;
         width: 360px;
@@ -67,7 +67,7 @@ main {
         justify-content: space-between;
         padding: 10px;
         background-color: var(--bg-card);
-        border-radius: 1rem;
+        border-radius: var(--radius-lg);
         border: var(--border) 2px solid;
         transition-duration: 0.3s;
         cursor: pointer;

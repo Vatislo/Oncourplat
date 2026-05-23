@@ -35,7 +35,7 @@ const init = async () => {
   }
 
   const renderCard = (item) => `
-  <a class="card" href="../lesson/index.html?course=${encodeURIComponent(item.title)}&lessonNumber=1">
+  <a class="card" href="../lesson/?course=${encodeURIComponent(item.title)}&lessonNumber=1">
     <h3>${item.title}</h3>
     <div><span>Author:</span><span>${item.instructor.name}</span></div>
     <div><span>Duration(day):</span><span>${item.duration}</span></div>

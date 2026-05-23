@@ -1,5 +1,5 @@
 .hero {
-    background: radial-gradient(ellipse at 0% 80%, rgba(138, 92, 246, 0.3) 10%, transparent 60%);
+    background: radial-gradient(ellipse at 0% 80%, var(--accent-glow) 10%, transparent 60%);
     height: 100vh;
     .container {
         display: flex;

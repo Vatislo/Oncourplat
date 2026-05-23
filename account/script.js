@@ -22,7 +22,7 @@ const openModal = (title, courses, type) => {
             const wrapper = document.createElement('div')
             wrapper.className = 'modal-item'
             const link = document.createElement('a')
-            link.href = `../lesson/index.html?course=${encodeURIComponent(name)}&lessonNumber=${lessonNum}`
+            link.href = `../lesson/?course=${encodeURIComponent(name)}&lessonNumber=${lessonNum}`
             link.innerHTML = `<h3>${name}</h3>`
             if (type === 'saved') {
                 const deleteBtn = document.createElement('button')
@@ -76,7 +76,7 @@ const renderPage = () => {
     if (data.courses.length === 0) return;
     for (let i = 0; i < data.courses.length; i++) {
       const template = `
-        <a class="item" href="../lesson/index.html?course=${encodeURIComponent(data.courses[i].name)}&lessonNumber=${data.courses[i].currentLesson}">
+        <a class="item" href="../lesson/?course=${encodeURIComponent(data.courses[i].name)}&lessonNumber=${data.courses[i].currentLesson}">
          <h3>${data.courses[i].name}</h3>
           <p>Lesson number: ${data.courses[i].currentLesson}</p>
         </a>
