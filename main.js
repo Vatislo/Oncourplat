@@ -1,17 +1,40 @@
+// ---- user init ----
 if (localStorage.getItem('userInfo') === null) {
   const defaultUser = {
-    savedCourses: {
-
-      courses: []
-    },
-    inProgressCourses: {
-      // {name:"",currentLesson:""}
-      courses: []
-    },
-    completedCourses: {
-      courses: []
-    }
+    savedCourses: { courses: [] },
+    inProgressCourses: { courses: [] },
+    completedCourses: { courses: [] }
   };
   localStorage.setItem('userInfo', JSON.stringify(defaultUser));
-  console.log(13412341)
+}
+
+// ---- sidebar toggle ----
+const burger = document.querySelector('.burger')
+const sidebar = document.querySelector('.sidebar')
+const overlay = document.querySelector('.sidebar-overlay')
+
+if (burger && sidebar && overlay) {
+  const close = () => {
+    burger.classList.remove('active')
+    sidebar.classList.remove('active')
+    overlay.classList.remove('active')
+    document.body.style.overflow = ''
+  }
+  const open = () => {
+    burger.classList.add('active')
+    sidebar.classList.add('active')
+    overlay.classList.add('active')
+    document.body.style.overflow = 'hidden'
+  }
+
+  burger.addEventListener('click', () => {
+    if (sidebar.classList.contains('active')) close()
+    else open()
+  })
+
+  overlay.addEventListener('click', close)
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && sidebar.classList.contains('active')) close()
+  })
 }
