@@ -1,4 +1,4 @@
-# Oncourplat
+# Openourplat
 
 A catalog of free IT courses. Browse, search, and track your learning progress.
 
