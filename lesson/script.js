@@ -29,7 +29,7 @@ const toSnakeLower = (str) => {
 
 const renderInfo = (item,fromTo) => {
     const templete = `
-    <h3 id="save-btn" title="Save">${item.course.title}</h3>
+    <div><h3 title="Save">${item.course.title}</h3><i id="save-btn" class="save-btn fa-regular fa-bookmark"></i></div>
     <div><span>Author:</span><span>${item.course.instructor.name}</span></div>
     <div><span>Duration(day):</span><span>${item.course.duration}</span></div>
     <div><span>Language:</span><span>${item.course.language}</span></div>
@@ -74,7 +74,7 @@ const addButtonComplete = () => {
     const h2 = document.querySelector('h2');
     const wrapper = document.createElement('div');
     wrapper.className = 'work-title';
-    wrapper.innerHTML = h2.outerHTML + `<p id="complete-btn" class="complete-btn complete-btn-hover">Complete</p>`;
+    wrapper.innerHTML = h2.outerHTML + `<p id="complete-btn" class="complete-btn complete-btn-hover">Save progress</p>`;
     h2.replaceWith(wrapper);
 }
 
@@ -139,36 +139,45 @@ const saveBtnFun = () => {
     if (!infoBox) return
     infoBox.addEventListener('click', (e) => {
         const saveBtn = e.target.closest('#save-btn')
-        if (saveBtn) {
-            if (!courseName) return
-            let user = JSON.parse(localStorage.getItem('userInfo'))
-            if (!user) {
-                user = {
-                    savedCourses: { courses: [] },
-                    inProgressCourses: { courses: [] },
-                    completedCourses: { courses: [] }
-                }
+        if (!saveBtn) return
+        if (!courseName) return
+        let user = JSON.parse(localStorage.getItem('userInfo'))
+        if (!user) {
+            user = {
+                savedCourses: { courses: [] },
+                inProgressCourses: { courses: [] },
+                completedCourses: { courses: [] }
             }
-            if (!user.savedCourses) user.savedCourses = { courses: [] }
-            if (!user.savedCourses.courses.includes(courseName)) {
-                user.savedCourses.courses.push(courseName)
-                saveBtn.style.color = 'var(--accent)'
-            }
-            localStorage.setItem('userInfo', JSON.stringify(user))
         }
+        if (!user.savedCourses) user.savedCourses = { courses: [] }
+        const idx = user.savedCourses.courses.indexOf(courseName)
+        if (idx === -1) {
+            user.savedCourses.courses.push(courseName)
+            saveBtn.classList.remove("fa-regular")
+            saveBtn.classList.add("fa-solid")
+            saveBtn.style.color = 'var(--accent)'
+        } else {
+            user.savedCourses.courses.splice(idx, 1)
+            saveBtn.classList.remove("fa-solid")
+            saveBtn.classList.add("fa-regular")
+            saveBtn.style.color = ''
+        }
+        localStorage.setItem('userInfo', JSON.stringify(user))
     })
     const user = JSON.parse(localStorage.getItem('userInfo'))
     if (user && user.savedCourses && user.savedCourses.courses.includes(courseName)) {
         const saveBtn = document.getElementById('save-btn')
-        if (saveBtn) saveBtn.style.color = 'var(--accent)'
+        if (saveBtn) {
+            saveBtn.style.color = 'var(--accent)'
+            saveBtn.classList.remove("fa-regular")
+            saveBtn.classList.add("fa-solid")
+        }
     }
 }
 
 const init = async () => {
     const lessons = await getData(`https://vatislo.github.io/FakeApi/oncourplat/courses/${toSnakeLower(courseName)}/main.json`)
     const allInfo = await getData(`https://vatislo.github.io/FakeApi/oncourplat/courses/${toSnakeLower(courseName)}/info.json`)
-    console.log(lessons)
-    console.log(allInfo)
     totalLessons = lessons.lessons.length
     renderInfo(allInfo,info)
     renderWork(lessons,work,lessonNumber)

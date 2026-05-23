@@ -14,7 +14,8 @@
 .stats-box {
     background-color: var(--bg-card);
     padding: 80px;
-    border: var(--border) 2px solid;
+    border-top: var(--border) 2px solid;
+    border-bottom: var(--border) 2px solid;
 }
 .contact-box {
     background: radial-gradient(ellipse at 50% 100%, rgba(138, 92, 246, 0.3) 20%, transparent 60%);
@@ -39,7 +40,8 @@
     border: var(--border) 2px solid;
     background-color: var(--bg-card);
     padding: 32px;
-    width: 640px;
+    max-width: 640px;
+    gap: 20px;
     display: flex;
     justify-content: space-between;
     div {
@@ -69,4 +71,17 @@
     flex-direction: column;
     text-align: center;
     gap: 20px;
+}
+
+@media (max-width: 900px) {
+    .stats-box {
+        padding: 30px;
+    }
+    .stats {
+        flex-direction: column;
+    }
+    .contact-email {
+        flex-direction: column;
+        padding: 16px;
+    }
 }

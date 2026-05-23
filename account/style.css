@@ -22,6 +22,7 @@ main {
     .preview-items {
         display: flex;
         justify-content: center;
+        align-items: center;
         gap: 40px;
     }
     .item {
@@ -66,7 +67,7 @@ main {
     }
     .progress-items {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
         justify-self: center;
         gap: 16px;    
@@ -94,10 +95,8 @@ main {
 
 .control-center {
     padding-bottom: 100px;
-}
-
-.control-center {
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 30px;
     h2 {
@@ -213,6 +212,52 @@ main {
                     }
                 }
             }
+        }
+    }
+}
+
+
+@media (max-width: 1000px) {
+    .progress {
+        max-width: 90%;
+        gap: 10px;
+        padding: 10px;
+        .progress-items{
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .preview-items {
+        flex-direction: column;
+    }
+    .progress {
+        .progress-items{
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+
+@media (max-width: 600px) {
+    .progress {
+        .progress-items{
+            grid-template-columns: 1fr;
+        }
+        .item {
+            h3 {
+                font-size: 0.9rem;
+            }
+            p {
+                font-size: 0.8rem;
+            }
+        }
+    }
+    .control-center {
+        div {
+
+            flex-direction: column;
         }
     }
 }

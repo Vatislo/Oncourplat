@@ -23,3 +23,18 @@
         font-size: 1.2rem;
     }
 }
+
+@media (max-width: 800px) {
+    .hero-content {
+    max-width: 500px;
+    row-gap: 16px;
+    align-items: center;
+    text-align: center;
+    h1 {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    }
+}

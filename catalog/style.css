@@ -50,6 +50,7 @@ main {
 
 .catalog-form {
     display: flex;
+    align-items: center;
     gap: 20px;
 }
 
@@ -79,5 +80,20 @@ main {
             display: flex;
             justify-content: space-between;
         }
+    }
+}
+
+@media (max-width: 800px) {
+    .catalog-text {
+        padding: 16px;
+        max-width: 90%;
+        text-align: center;
+        h1 {
+            font-size: 2rem;
+        }
+
+    }
+    .catalog-form {
+        flex-direction: column;
     }
 }

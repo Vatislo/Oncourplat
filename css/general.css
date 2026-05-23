@@ -111,6 +111,7 @@ nav {
 .stats {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     gap: 50px;
     div {
         width: 200px;
@@ -141,4 +142,12 @@ footer {
     a {
         color: var(--accent);
     }  
+}
+
+
+
+@media (max-width: 800px) {
+    .container {
+      max-width: 95%;
+    }
 }
