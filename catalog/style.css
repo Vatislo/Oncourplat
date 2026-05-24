@@ -1,3 +1,8 @@
+body {
+  padding-bottom: 50px;
+}
+
+
 main {
     background: radial-gradient(ellipse at 50% 50%, var(--accent-glow) 20%, transparent 60%);
 }
@@ -41,6 +46,17 @@ main {
         &:hover {
             border-color: var(--accent);
             /* transform: scale(1.05); */
+        }
+    }
+    button {
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        background: var(--accent);
+        color: white;
+        transition-duration: var(--transition-fast);
+        &:hover {
+            transform: scale(1.03);
         }
     }
     button:active {

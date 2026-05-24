@@ -22,13 +22,18 @@ nav {
     a {
         transition-duration: 0.1s;
         &:hover {
-                transform: scale(1.1);
-            }
+            transform: scale(1.1);
+            color: var(--text-primary);
+        }
     }
     .logo {
         color: var(--accent);
         font-size: 1.4rem;
         font-weight: bolder ;
+        &:hover {
+            transform: scale(1);
+            color: var(--accent);
+        }
     }
     ul {
         display: flex;
@@ -60,7 +65,7 @@ nav {
     color: white;
     transition-duration: var(--transition-fast);
     &:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
     }
 }
 
@@ -187,6 +192,11 @@ footer {
     padding: 80px 24px 24px;
     display: flex;
     flex-direction: column;
+}
+
+.active {
+    color: var(--text-primary);
+    transform: scale(1.1);
 }
 
 .sidebar.active {

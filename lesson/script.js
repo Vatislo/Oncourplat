@@ -109,7 +109,7 @@ const completeButton = () => {
 const stylleList = () => {
     if (lessonNumber) {
         const items = document.querySelectorAll('#lesson-list li');
-        items[lessonNumber - 1].classList.add("active")
+        items[lessonNumber - 1].classList.add("active-li")
         for (let i = 0; i < lessonNumber - 1; i++) {
            items[i].classList.add("passed")
         }

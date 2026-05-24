@@ -1,3 +1,7 @@
+body {
+  padding-bottom: 50px;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -24,6 +28,7 @@ main {
     background-color: var(--bg-card);
     border-radius: var(--radius-lg);
     border: var(--border) 2px solid;
+    overflow-y: auto;
 }
 
 .lesson-list li { 
@@ -38,7 +43,7 @@ main {
     color: var(--text-secondary);
 }
 
-.active {
+.active-li {
     color: var(--accent);
 }
 
